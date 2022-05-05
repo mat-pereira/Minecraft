@@ -42,19 +42,31 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 46px 0;
+    padding: 44px 0;
+}
+.banner nav.nav_bar li {
+    padding: 2px 0;
+}
+.banner nav.nav_bar .selecionado {
+    border-bottom: 2px solid #1DED35;
+    background-color: transparent;
 }
 
-.banner div.sidebar {
+.banner  nav.side_bar {
     position: absolute;
     display: flex;
     flex-direction: column;
-    border: #F9F9F9 10px solid;
-    top: 50%;
+    top: 44%;
+    margin-left: 0.5%;
+    align-items: center;
+}
+
+.banner  nav.side_bar i {
+    margin: 20px;
 }
 
 div .card_banner {
-    border: red 1px solid;
+/*  border: red 1px solid; */
     margin-top: 14vh;
     flex-direction: column;
     display: flex;
@@ -73,4 +85,17 @@ div .card_banner h5 i{
     color: #1DED35;
     font-weight: normal;
     box-shadow: 0rem 0rem 1rem #1DED35;
+}
+
+button {
+    border: 0;
+    border-radius: 1px;
+    padding: 8px;
+    color: #F9F9F9;
+    background: linear-gradient(135deg, #1DED35, #048816);
+    font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';;
+}
+
+.banner .card_banner button {
+    width: 35%;
 }
