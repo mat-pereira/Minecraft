@@ -15,7 +15,7 @@ body {
 
 .render {
     width: auto;
-    height: 80vh;
+    height: 84vh;
     position: absolute;
     top: 20vh;
     left: 52vw;
@@ -93,9 +93,40 @@ button {
     padding: 8px;
     color: #F9F9F9;
     background: linear-gradient(135deg, #1DED35, #048816);
-    font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';;
+    font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
 }
 
 .banner .card_banner button {
     width: 35%;
+}
+
+div.server {
+    background-color: #282d3c; 
+}
+
+.server .container {
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width: 20vw;
+    height: auto;
+    border-radius: 10px;
+    padding: 1% 2% 0 2%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -1px 8px 10px 2px  black; 
+    margin-top: 10vh; 
+    margin-bottom: 10vh;
+    z-index: 2;
+    background: linear-gradient(150deg ,#048816 ,#048816, #04881652);
+}
+.card .card_header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.card p {
+    font-size: 2vh
 }
