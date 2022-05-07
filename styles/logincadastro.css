@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+    color: #F9F9F9
+}
+.banner {
+    background-image: url(../imgs/Banners/Slide4.PNG);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.700);
+    padding: 2%;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    background: linear-gradient(135deg, #1DED35, #048816);
+    height: 2px;
+    width: 84%;
+    margin: 10px;
+    border-radius: 40px;
+}
+
+input, select {
+    width: 80%;
+    height: 10%;
+    background-color: black;
+    color: #F9F9F9;
+    border: 0;
+    border-radius: 5px;
+    padding: 3%;
+    margin: 10px 10px;
+    font-size: 12px;
+}
+select {
+    width: 20.2vw;
+    padding: 3% 1%;
+}
+
+.card_buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
+}
+button.button1 {
+    margin-top: 10px;
+    width: 54%;
+    height: 80%;
+    border: 0;
+    border-radius: 1px;
+    padding: 8px;
+    color: #F9F9F9;
+    background: linear-gradient(135deg, #1DED35, #048816);
+    font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+}
+
+button.button2 {
+    margin-top: 10px;
+    width: 40%;
+    height: auto;
+    border: 1px solid #cecece;
+    border-radius: 2px;
+    font-size: 8px;
+    padding: 4px;
+    color: #cecece;
+    background: transparent;
+    font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+    text-align: start;
+}

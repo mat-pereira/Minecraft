@@ -72,6 +72,9 @@ div .card_banner {
     display: flex;
     width: 46%;
 }
+div .card_banner h1{
+    margin-bottom: 0px;
+}
 div .card_banner h4{
     color: #cecece;
     font-weight: normal;
@@ -85,6 +88,11 @@ div .card_banner h5 i{
     color: #1DED35;
     font-weight: normal;
     box-shadow: 0rem 0rem 1rem #1DED35;
+}
+
+div .card_banner h6{
+    margin: 10px 0;
+    font-weight: normal;
 }
 
 button {
@@ -101,7 +109,7 @@ button {
 }
 
 div.server {
-    background-color: #282d3c; 
+    background-color: #2b2c2e; 
 }
 
 .server .container {
@@ -120,7 +128,7 @@ div.server {
     margin-top: 10vh; 
     margin-bottom: 10vh;
     z-index: 2;
-    background: linear-gradient(150deg ,#048816 ,#048816, #04881652);
+    background: linear-gradient(150deg ,#048816 ,#066913, #04881652);
 }
 .card .card_header {
     display: flex;
