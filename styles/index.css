@@ -5,7 +5,7 @@ body {
     color: #F9F9F9
 }
 .banner {
-    background-image: url(../imgs/Banners/Slide4.PNG);
+    background-image: url(../imgs/Banners/Banners.png);
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -137,4 +137,30 @@ div.server {
 }
 .card p {
     font-size: 2vh
+}
+
+.rules {
+    background-image: url(../imgs/Banners/Banner_Rules2.png);
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.rules .card_rules h6{
+    color: #cecece;
+    font-weight: normal;
+}
+.rules button {
+    background: linear-gradient(135deg, #1DED35, #048816, #048816);
+    width: 20vw;
+    box-shadow: 1px 1px 0.5rem  #1DED35 ;
+}
+
+.footer {
+    background: #2b2c2e;
+    width: 100vw;
+    height: 30vh;
 }
