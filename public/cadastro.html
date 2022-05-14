@@ -5,11 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Planet Minecraft | Welcome to your new home!</title>
+        <script src="./js/funcoes.js"></script>
         <!--Folha de Estilo--> <link rel="stylesheet" href="styles/logincadastro.css">
         <!--Icone no title HTML--> <link rel="icon" href="imgs/Imagens/20220503_225050620_iOS.jpg"> 
         <!--Google Fonts--> <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Radio+Canada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=checkbox" +Canada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <!--Link Font Awesome--> <script src="https://kit.fontawesome.com/b18c1d249d.js" crossorigin="anonymous"></script> 
     </head>
 <body>
@@ -17,19 +18,134 @@
         <div class="card">
             <h4>Welcome to PlanetMinecraft Community !</h4>
             <div class="line"></div>
-            <input type="text" placeholder="NICKNAME">
-            <input type="text" placeholder="E-MAIL">
-            <select>
-                <option selected disabled>WHAT DO YOU KNOW ABOUT BUILD?</option>
-                <option value="">Basic - I usually seek help and watch construction tutorial</option>
-                <option value="">Intermediary - I can do my constructions alone, sometimes i look for help</option>
-                <option value="">Advanced - I can make medium and big constructions / I know how to use WorldEdit </option>
+            <input class ="normal" maxlength="50" id="nome_input" type="text" placeholder="NICKNAME">
+            <input class ="normal" maxlength="70" id="email_input" type="text" placeholder="E-MAIL">
+            
+            <select id="select_nivel">
+                <option selected disabled value="0">WHAT DO YOU KNOW ABOUT BUILD?</option>
+                <option value="Basic">Basic - I usually seek help and watch construction tutorial</option>
+                <option value="Intermediary">Intermediary - I can do my constructions alone, sometimes i look for help</option>
+                <option value="Advanced">Advanced - I can make medium and big constructions / I know how to use WorldEdit </option>
             </select>
-            <input type="password" placeholder="PASSWORD">
-            <input type="password" placeholder="CONFIRM YOUR PASSWORD">
+            <select id="select_lingua">
+                <option selected disabled value="0">SELECT ONE LANGUAGE</option>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Portuguese">Portuguese</option>
+            </select>
+            <input class ="normal" maxlength="50" id="senha_input" type="password" placeholder="PASSWORD">
+            <input class ="normal" maxlength="50" id="confirmacao_senha_input" type="password" placeholder="CONFIRM YOUR PASSWORD">
         <div class="card_buttons">
-            <button class="button1">Sign up</button>
+            <button class="button1" onclick="cadastrar()">Sign up</button>
+            <div id="divAguardar">
+                <img src="../imgs/loadingControl.gif" id="loading-gif">
+            </div>
         </div>
-        </div>
+    </div>
 </body>
 </html>
+
+<script>
+
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var nivelVar = select_nivel.value;
+        var linguaVar = select_lingua.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || nivelVar == 0 || linguaVar == 0 ||  senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Corrija e tente novamente.";
+            email_input.style.border="red 1px solid"
+
+            alertaInput.innerHTML=`Email inválido`
+            alertaInput.style.display="block"
+            alertaInput.style.color="red"
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            email_input.style.border="green 2px solid"
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
+
+            senha_input.style.border="red 1px solid"
+            confirmacao_senha_input.style.border="red 1px solid"
+
+            alertaInput2.innerHTML=`Senha diferentes`
+            alertaInput2.style.display="block"
+            alertaInput2.style.color="red"
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            confirmacao_senha_input.style.border="green 1px solid"
+            senha_input.style.border="green 1px solid"
+
+            alertaInput2.innerHTML=``
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
