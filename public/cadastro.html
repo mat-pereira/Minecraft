@@ -37,14 +37,33 @@
             <input class ="normal" maxlength="50" id="confirmacao_senha_input" type="password" placeholder="CONFIRM YOUR PASSWORD">
             <div class="verification"> 4 + 5 <input class="normal" placeholder="RESULT" id="verification_input"> </div>
         <div class="card_buttons">
-            <button class="button1" onclick="cadastrar()">Sign up</button>
+            <button class="button1" onclick="abrir('confirmar_cadastro')">Sign up</button>
             <div id="divAguardar">
                 
             </div>
         </div>
     </div>
+    <div id="confirmar_cadastro">
+        <i class="fa-solid fa-xmark" onclick="fechar('confirmar_cadastro')"></i>
+        <div id="confirmar_cadastro_card">
+        <h5>Ao apertar em cadastrar você confirmar que leu as regras!</h5>
+        <a href="imgs/RulesPlanetMinecraft.pdf" download=""> <h6>Ainda não li as regras</h6> </a>
+        <button class="button1" onclick="cadastrar()">Cadastrar</button>
+        <button class="button2" onclick="fechar('confirmar_cadastro')">Não concordo</button>
+    </div>
+    </div>
 </body>
 </html>
+
+<script> // Pop UP 
+    function abrir(id) {
+        document.getElementById(id).style.display = "block";
+    } 
+
+    function fechar(id) {
+        document.getElementById(id).style.display = "none";
+    } 
+</script>
 
 <script>
 

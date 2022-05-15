@@ -110,3 +110,34 @@ input.checkbox {
 .verification input {
     width: 80%;
 }
+
+#confirmar_cadastro i {
+    font-size: 12px;
+}
+
+#confirmar_cadastro {
+    width: 22vw;
+    height: 22vh;
+    position: absolute;
+    display: none;
+    background-image: url(../imgs/Banners/Banner_Rules.png);
+    box-shadow: 1px 1px 0.5rem  black ;
+    border-radius: 10px;
+    padding: 1% 1% 7% 1%;
+}
+#confirmar_cadastro a {
+    text-decoration: underline #1DED35;
+}
+#confirmar_cadastro h6 {
+        color: #cecece;
+        font-weight: normal;
+        width: 40%;
+}
+
+.render {
+    width: auto;
+    height: 84vh;
+    position: absolute;
+    top: 20vh;
+    left: 52vw;
+}
