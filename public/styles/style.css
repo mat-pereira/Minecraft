@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
   background-color: black;
+  color: #F9F9F9
 }
 
 .container {
@@ -44,128 +43,6 @@ body {
   color: #32b9cd;
   width: fit-content;
   font-weight: 500;
-}
-
-
-/* BANNER */
-
-.banner {
-  height: fit-content;
-  padding: 40px 0;
-  color: white;
-  background-image: url(".././assets/imgs/bg-jelly-fish-para_outras_pags.png");
-  background-size: cover;
-}
-
-.banner .container {
-  height: 400px;
-  font-size: 36px;
-  justify-content: center;
-  align-items: center;
-}
-
-.tamanho-conteudo { 
-  height: fit-content !important;
-}
-
-.banner p {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  width: 280px;
-  font-size: 36px;
-}
-
-.banner .container span {
-  font-weight: 800;
-}
-
-/* missao visao valores */
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .container{
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.box {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-/* FOOTER */
-
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-}
-
-
-/* LOGIN */
-
-.banner .container .card {
-  background-color: #e5e5e5;
-  height: fit-content;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  color: palevioletred;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.card {
-  display: flex;
-  justify-content: space-around;
-}
-
-.card h2 {
-  font-size: 30px;
-}
-
-.card h4 {
-  font-size: 16px;
-}
-
-.banner #div_erros_login {
-  margin-top: 15px;
-}
-
-button {
-  cursor: pointer;
 }
 
 /* FORMULARIO */
@@ -235,7 +112,7 @@ input {
   width: 50px;
 }
 
-/* PAGINA DOS GRÁFICOS */
+/* DASHBOARD */
 
 .janela {
   display: flex;
@@ -247,30 +124,33 @@ input {
   color: white;
 }
 
-.header-left {
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   height: 100vh;
-  width: 25%;
+  width: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
-  /* border: 3px solid pink; */
+  border-radius: 0 25px 25px 0;
+  background-color: #1b1b23;
+}
+
+.sidebar span {
+  font-weight: bold;
 }
 
 .dash-right {
   display: flex;
-  width: 75%;
+  width: 90%;
   height: fit-content;
-  background-color: #161618;
+  background-color: #20232c;
   position: relative;
   top: 0;
-  left: 25%;
+  left: 10%;
 }
 
 .header-left h1 {
@@ -279,69 +159,64 @@ input {
 
 .hello {
   width: 100%;
+  color: #f9f9f9;
   display: flex;
   justify-content: center;
 }
-
-.hello h3 {
-  color: #e3b062;
-  font-weight: 300;
-  font-size: 1.2rem;
+.hello #b_usuario {
+  font-weight: bold;
 }
+
 
 .hello h3 span {
   font-weight: 800;
 }
 
+.sidebar h5{
+  margin: 7%;
+  padding: 1%;
+  color: #e7e7e7;
+}
+
+.btn-nav-ativo {
+  width: 76%;
+  background: linear-gradient(255deg, #1DED35, #048816);
+  border-radius: 5px;
+  text-align: start;
+  padding: 1% 1%;
+}
+
 .btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #e6005a;
+  width: 76%;
   border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
+  text-align: start;
+  padding: 1% 1%;
 }
 
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
-  margin: 0;
-}
-
-.btn-nav h3,
-.btn-logout h3 {
-  margin: 0;
-  padding: 0;
+.sidebar h6{
+  margin: 7%;
+  padding: 1%;
+  color: #e7e7e7;
 }
 
 .btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-  cursor: pointer;
+width: 26%;
+background: #048816;
+border-radius: 5px;
+text-align: center;
+padding: 1% 1%;
+padding: 1% 1%;
 }
 
-/* pagina extra - simulador */
-.simulador {
-  color: white;
-
+.line {
+  background: linear-gradient(135deg, #1DED35, #048816);
+  height: 2px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 40px;
 }
 
-.simulador .container {
-  flex-direction: column
+a {
+  text-decoration: none;
 }
+
