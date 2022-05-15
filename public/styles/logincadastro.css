@@ -42,7 +42,7 @@ input.normal, select {
     border-radius: 5px;
     padding: 3%;
     margin: 10px 10px;
-    font-size: 12px;
+    font-size: 11px;
 }
 select {
     width: 86%;
@@ -96,4 +96,17 @@ input.checkbox {
 
 #loading-gif {
     width: 10%;
+}
+
+.verification {
+    display: flex;
+    font-size: 11px;
+    width: 87%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 3%;
+}
+
+.verification input {
+    width: 80%;
 }
