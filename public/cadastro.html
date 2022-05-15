@@ -116,7 +116,9 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                nivelServer: nivelVar,
+                linguaServer: linguaVar
             })
         }).then(function (resposta) {
 
@@ -125,7 +127,7 @@
             if (resposta.ok) {
                 cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
                 setTimeout(() => {
                     window.location = "login.html";

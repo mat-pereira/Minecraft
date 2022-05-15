@@ -31,7 +31,7 @@ function limparSessao() {
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "flex";
-    divAguardar.innerHTML = <img src="../imgs/circle-loading.gif" id="loading-gif"></img>
+    divAguardar.innerHTML = `<img src="imgs/circle-loading.gif" id="loading-gif">`
 }
 
 function finalizarAguardar(texto) {
