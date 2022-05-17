@@ -3,11 +3,11 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+CREATE DATABASE mat_minecraft;
 
-USE acquatec;
+USE mat_minecraft;
 
-CREATE TABLE usuario (
+CREATE TABLE pm_usuarios (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
@@ -35,7 +35,7 @@ CREATE TABLE medida (
 
 /* para sql server - remoto - produção */
 
-CREATE TABLE usuario (
+CREATE TABLE pm_usuarios (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(50),
 	email VARCHAR(50),

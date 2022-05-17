@@ -13,7 +13,7 @@ function listar() {
             u.email,
             u.senha
         FROM aviso a
-            INNER JOIN usuario u
+            INNER JOIN pm_usuarios u
                 ON a.fk_usuario = u.id;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -33,7 +33,7 @@ function pesquisarDescricao(texto) {
             u.email,
             u.senha
         FROM aviso a
-            INNER JOIN usuario u
+            INNER JOIN pm_usuarios u
                 ON a.fk_usuario = u.id
         WHERE a.descricao LIKE '${texto}';
     `;
@@ -54,7 +54,7 @@ function listarPorUsuario(idUsuario) {
             u.email,
             u.senha
         FROM aviso a
-            INNER JOIN usuario u
+            INNER JOIN pm_usuarios u
                 ON a.fk_usuario = u.id
         WHERE u.id = ${idUsuario};
     `;
