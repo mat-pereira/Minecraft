@@ -72,11 +72,12 @@ button.button1 {
     font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
 }
 
+
 button.button2 {
     margin-top: 10px;
-    width: 40%;
+    width: 70%;
     height: auto;
-    border: 1px solid #cecece;
+    border: 0px solid #cecece;
     border-radius: 2px;
     font-size: 9px;
     padding: 4px;
@@ -84,6 +85,8 @@ button.button2 {
     background: transparent;
     font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
     text-align: start;
+    margin-left: 30%;
+    text-align: right;
 }
 
 input.checkbox {
