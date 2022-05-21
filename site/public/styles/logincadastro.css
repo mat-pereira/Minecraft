@@ -150,7 +150,11 @@ input.checkbox {
     margin: auto;
     display: none;
   }
-  
+
+.loading-gif {
+    height: 5px;
+    width: auto;
+}
   
 .alerta_erro {
     top: 5%;

@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Planet Minecraft | Welcome again to your home!</title>
+        <script src="./js/funcoes.js"></script>
         <!--Folha de Estilo--> <link rel="stylesheet" href="styles/logincadastro.css">
         <!--Icone no title HTML--> <link rel="icon" href="imgs/Imagens/20220503_225050620_iOS.jpg"> 
         <!--Google Fonts--> <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -17,13 +18,100 @@
         <div class="card">
             <h4>Welcome to PlanetMinecraft Community !</h4>
             <div class="line"></div>
-            <input class ="normal" type="text" placeholder="E-MAIL">
-            <input class ="normal" type="password" placeholder="PASSWORD">
+            <input class ="normal" type="text" placeholder="E-MAIL" id="email_input">
+            <input class ="normal" type="password" placeholder="PASSWORD" id="senha_input">
         <div class="card_buttons">
-            <button class="button1">Login</button>
+            <button class="button1" onclick="entrar()">Login</button>
             <a href="cadastro.html" class="link_botao">
             <button class="button2">I don't belong to the community yet</button> </a>
         </div>
+        <div id="div_aguardar" class="loading-div">
+            <img src="imgs/circle-loading.gif" id="loading-gif" style="margin-top: 10px; width: 1%; height: auto;">
         </div>
+        </div>
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+    </div>
 </body>
 </html>
+
+
+
+
+
+<script>
+function entrar() {
+    aguardar();
+
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+
+    if (emailVar == "" || senhaVar == "") {
+        cardErro.style.display = "block"
+        mensagem_erro.innerHTML = "Preencha todos os campos";
+        mensagem_erro.style.padding = "1%"
+        email_input.style.border="red 1px solid"
+        senha_input.style.border="red 1px solid"
+
+        finalizarAguardar();
+        return false;
+    }
+    else {
+        setInterval(sumirMensagem, 4000)
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+
+                setTimeout(function () {
+                    window.location = "./dashboard/cards.html";
+                }, 1000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
+function sumirMensagem() {
+    cardErro.style.display = "none"
+}
+
+</script>

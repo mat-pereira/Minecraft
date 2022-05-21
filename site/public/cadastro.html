@@ -92,6 +92,7 @@
         if (nomeVar == "" || emailVar == "" || nivelVar == 0 || linguaVar == 0 ||  senhaVar == "" || confirmacaoSenhaVar == "" || verificacaoVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha todos os campos";
+            mensagem_erro.style.padding = "2%"
             email_input.style.border="red 1px solid"
             nome_input.style.border="red 1px solid"
             select_nivel.style.border="red 1px solid"
