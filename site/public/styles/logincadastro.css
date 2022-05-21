@@ -144,3 +144,23 @@ input.checkbox {
     top: 20vh;
     left: 52vw;
 }
+
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+  }
+  
+  
+.alerta_erro {
+    top: 5%;
+    left: 75%;
+    width: auto;
+    text-align: center;
+    display: flex;
+    z-index: 99;
+    font-size: 10px;
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.774);
+    border-radius: 3px;
+}

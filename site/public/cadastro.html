@@ -50,8 +50,17 @@
         <a href="imgs/RulesPlanetMinecraft.pdf" download=""> <h6>Ainda não li as regras</h6> </a>
         <button class="button1" onclick="cadastrar()">Cadastrar</button>
         <button class="button2" onclick="fechar('confirmar_cadastro')">Não concordo</button>
+        <div id="div_aguardar" class="loading-div">
+            <img src="" id="loading-gif">
     </div>
     </div>
+    </div>
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 
@@ -82,7 +91,14 @@
 
         if (nomeVar == "" || emailVar == "" || nivelVar == 0 || linguaVar == 0 ||  senhaVar == "" || confirmacaoSenhaVar == "" || verificacaoVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha todos os campos";
+            email_input.style.border="red 1px solid"
+            nome_input.style.border="red 1px solid"
+            select_nivel.style.border="red 1px solid"
+            select_lingua.style.border="red 1px solid"
+            senha_input.style.border="red 1px solid"
+            confirmacao_senha_input.style.border="red 1px solid"
+            verification_input.style.border="red 1px solid"
 
             finalizarAguardar();
             return false;
@@ -95,14 +111,39 @@
             mensagem_erro.innerHTML = "Ops, e-mail inválido! Corrija e tente novamente.";
             email_input.style.border="red 1px solid"
 
-            alertaInput.innerHTML=`Email inválido`
-            alertaInput.style.display="block"
-            alertaInput.style.color="red"
+            mensagem_erro.innerHTML=`Email inválido`
+            mensagem_erro.style.display="block"
+            
             finalizarAguardar();
             return false;
         }
         else {
             email_input.style.border="green 1px solid"
+        }
+
+        if (nomeVar.length < 1) {
+            nome_input.style.border="red 1px solid"
+            finalizarAguardar();
+        }
+        else {
+            nome_input.style.border="green 1px solid"
+        }
+
+        
+        if (nivelVar == 0) {
+            select_nivel.style.border="red 1px solid"
+            finalizarAguardar();
+        }
+        else {
+            select_nivel.style.border="green 1px solid"
+        }
+
+        if (linguaVar == 0) {
+            select_lingua.style.border="red 1px solid"
+            finalizarAguardar();
+        }
+        else {
+            select_lingua.style.border="green 1px solid"
         }
 
         if (senhaVar != confirmacaoSenhaVar) {
@@ -112,9 +153,8 @@
             senha_input.style.border="red 1px solid"
             confirmacao_senha_input.style.border="red 1px solid"
 
-            alertaInput2.innerHTML=`Senha diferentes`
-            alertaInput2.style.display="block"
-            alertaInput2.style.color="red"
+            mensagem_erro.innerHTML=`Senha diferentes`
+            mensagem_erro.style.display="block"
             finalizarAguardar();
             return false;
         }
@@ -122,15 +162,19 @@
             confirmacao_senha_input.style.border="green 1px solid"
             senha_input.style.border="green 1px solid"
 
-            alertaInput2.innerHTML=``
+            mensagem_erro.innerHTML=``
             setInterval(sumirMensagem, 5000)
         }
-        if (verificacaoVar != 9) {
+
+        if (verification_input.value != 9) {
             verification_input.style.border="red 1px solid"
+            finalizarAguardar();
         }
         else {
             verification_input.style.border="green 1px solid"
         }
+
+        finalizarAguardar();
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
