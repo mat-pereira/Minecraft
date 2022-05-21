@@ -19,9 +19,9 @@ CREATE TABLE pm_usuarios (
 CREATE TABLE pm_publicacoes (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
-    descricao VARCHAR(150),
 	warp varchar(100),
 	arquivo varchar(100),
+	descricao VARCHAR(150),
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES pm_usuarios(id)
 ); 

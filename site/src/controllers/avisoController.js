@@ -67,17 +67,23 @@ function pesquisarDescricao(req, res) {
 
 function publicar(req, res) {
     var titulo = req.body.titulo;
+    var warp = req.body.warp;
+    var arquivo = req.body.arquivo;
     var descricao = req.body.descricao;
     var idUsuario = req.params.idUsuario;
 
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
+    } else if (warp == undefined) {
+        res.status(400).send("O warp está indefinido!");
+    } else if (arquivo == undefined) {
+        res.status(400).send("A url está indefinido!");
     } else if (descricao == undefined) {
         res.status(400).send("A descrição está indefinido!");
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        avisoModel.publicar(titulo, warp, url, descricao, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
