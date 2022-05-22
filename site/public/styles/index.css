@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
-    color: #F9F9F9
+    color: #F9F9F9;
+    background-color: #2b2c2e;
 }
 .banner {
     background-image: url(../imgs/Banners/Banners.png);
@@ -151,7 +152,7 @@ div.server {
     width: auto;
     height: 54vh;
     position: absolute;
-    top: 156vh;
+    top: 190vh;
     left: 52vw;
     transform: scaleX(-1);
 }
@@ -190,6 +191,37 @@ div.server {
 
 .footer button {
     margin-top: 1%;
+}
+
+.minigame {
+    margin: 0 0 5% 0;
+}
+
+.minigame .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.minigame .card_text_minigame {
+
+}
+
+.minigame .card_play_minigame {
+    display: flex;
+    border-bottom: 1px solid silver;
+    width: 80%;
+}
+
+button.button1 {
+    width: 80%;
+}
+
+#img_creeper{
+    position: absolute;
+    width: 5%;
+    height: auto;
+    margin-top: 5%;
+
 }
 
 
