@@ -43,6 +43,8 @@ CREATE TABLE pm_usuarios (
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50),
+	nivel VARCHAR(50),
+	lingua VARCHAR(50)
 );
 
 CREATE TABLE pm_publicacoes (
