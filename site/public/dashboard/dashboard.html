@@ -84,6 +84,7 @@
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
+    // Chamar função de obterUsuariosCadastrados tambem em onload, quando carregar a pagina
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
@@ -111,7 +112,8 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-
+                 // Duplicar a função obterDadosGrafico sem o parametro,
+                 // Cria o caminho para chegar no banco, rotas, controllers, models
     }
 
     // só altere aqui se souber o que está fazendo!
