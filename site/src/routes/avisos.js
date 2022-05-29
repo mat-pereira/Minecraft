@@ -15,6 +15,10 @@ router.get("/listar/:idUsuario", function (req, res) {
     avisoController.listarPorUsuario(req, res);
 });
 
+router.get("/contar/:idUsuario", function (req, res) {
+    avisoController.ContarPostPorUsuario(req, res);
+});
+
 router.get("/pesquisar/:descricao", function (req, res) {
     avisoController.pesquisarDescricao(req, res);
 });
