@@ -33,6 +33,16 @@ CREATE TABLE pm_acessos (
 	FOREIGN KEY (fk_usuario) REFERENCES pm_usuarios(id)
 );
 
+-- Inserindo valores
+
+insert into pm_usuarios values
+(null,'userteste1','userteste1@gmail.com','userteste','Basic','English'),
+(null,'userteste2','userteste2@gmail.com','userteste','Basic','English'),
+(null,'userteste3','userteste3@gmail.com','userteste','Basic','English');
+
+insert into pm_publicacoes values 
+(null,'Tester House','1390 9090 1001','https:teste.com','Post para testar o banco de dados',1),
+(null,'Tester House 2','1390 9000 1001','https:teste2.com','Post para testar o banco de dados do userteste2',2);
 
 
 
