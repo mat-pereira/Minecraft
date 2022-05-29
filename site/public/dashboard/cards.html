@@ -64,7 +64,7 @@
                 <div class="card">
                     <h1>I have </h1>
                     <div class="resultado">
-                        <p id="temp_aquario_2"><span style="font-size: 14px;">maps</span></p>
+                        <p id="qtd_mapas_usuario"><span style="font-size: 14px;">maps</span></p>
                     </div>
 
 
@@ -72,14 +72,14 @@
                 <div class="card">
                     <h1>I speak</h1>
                     <div class="resultado">
-                        <p id="temp_aquario_3">-°C</p>
+                        <p id="lingua_usuario">-°C</p>
                     </div>
 
                 </div>
                 <div class="card">
                     <h1>I am</h1>
                     <div class="resultado">
-                        <p id="temp_aquario_4"> <span style="font-size: 14px;">builder</span></p>
+                        <p id="nivel_usuario"> <span style="font-size: 14px;">builder</span></p>
                     </div>
                 </div>
 
@@ -95,49 +95,15 @@
 
 <script>
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
+  if (sessionStorage. == '') {
 
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+  }
+  else if () {
 
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
+  }
+  else {
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
-
-                        alertar(resposta[0].temperatura, idAquario);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
-
-    }
+  }
 
 
 
