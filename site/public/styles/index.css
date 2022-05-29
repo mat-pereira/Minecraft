@@ -202,27 +202,17 @@ div.server {
     justify-content: space-between;
 }
 
-.minigame .card_text_minigame {
 
-}
-
-.minigame .card_play_minigame {
+.minigame #card_play_minigame {
     display: flex;
-    border-bottom: 1px solid silver;
     width: 80%;
+    z-index: 999;
 }
 
 button.button1 {
     width: 80%;
 }
 
-#img_creeper{
-    position: absolute;
-    width: 5%;
-    height: auto;
-    margin-top: 5%;
-
-}
 
 
 
