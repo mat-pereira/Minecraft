@@ -31,7 +31,7 @@
                 <h6>International Creative Mode Server</h6>
                 <h4>Discover and build a new places, without any boundaries<br> full of fun and millions of friends. <br></h4> <a href="login.html"> <!--Referência-->
                 <button>Start Now!</button>  </a>
-                <h5> <i class="fa-solid fa-square"></i>  1231 Registered Players </h5>
+                <h5> <i class="fa-solid fa-square"></i>  <i>1231</i> Registered Players </h5>
             </div>
                 <img class="render"; src="imgs/Imagens/20220503_221645000_iOS.png">
         </div>
@@ -71,6 +71,7 @@
             <button class="button1" onclick="andar()"> Run now!! </button>
         </div>
         <div class="card_play_minigame">
+            <span id="span_teste"></span>
             <img src="imgs/creeper.webp" id="img_creeper">
         </div>
         </div>
@@ -103,7 +104,11 @@
 </body>
 </html>
 <script>
+    contador = 0
     function andar() {
-        ""
+        qtd_andar = Number(input_quantidade.value) 
+        for (var contador = 1; contador <= qtd_andar; contador++) {
+            span_teste.innerHTML += "_"
+        }
     }
 </script>

@@ -260,47 +260,12 @@ a {
   height: 100vh;
 }
 
-.regua {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin-top: 30px;
-}
 
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
-
-.item-regua {
-  padding: 5px;
-  width: 15%;
-  margin: 5px;
-  text-align: center;
-  padding-top: 15px;
-}
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  height: 450px;
+  height: 100vh;
   width: 100%;
   align-items: center;
   color: white;
@@ -312,10 +277,11 @@ a {
   flex-wrap: wrap;
   display: flex;
   text-align: center;
-  height: 180px;
+  height: 40%;
   justify-content: right;
   background-color: #212124;
   font-size: 20px;
+  border-radius: 5px;
 }
 
 .card p {
@@ -326,16 +292,14 @@ a {
 }
 
 .cards h1 {
-  font-size: 22px;
+  font-size: 20px;
   width: 100%;
-  border-bottom: solid white 1px;
   text-align: left;
   font-weight: lighter;
-  margin: 20px;
+  margin-left: 20px;
 }
 
-.temperatura,
-.umidade {
+.resultado {
   margin: 5px;
   margin-left: 20px;
   width: 75%;
@@ -362,15 +326,5 @@ a {
   padding-top: 45px;
 }
 
-.btn-chart {
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  margin: 5px;
-}
 
 

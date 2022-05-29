@@ -53,7 +53,7 @@ CREATE TABLE pm_publicacoes (
     descricao VARCHAR(150),
 	warp varchar(100),
 	arquivo varchar(100),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
+	fk_usuario INT FOREIGN KEY REFERENCES pm_usuarios(id)
 ); 
 
 CREATE TABLE pm_acessos (
