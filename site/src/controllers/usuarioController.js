@@ -24,8 +24,8 @@ function listar(req, res) {
         );
 }
 
-function contarusuarios(req, res) {
-    usuarioModel.contarusuarios()
+function ObterContagemUsuariosCadastrados() {
+    usuarioModel.ObterContagemUsuariosCadastrados()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -121,6 +121,6 @@ module.exports = {
     entrar,
     cadastrar,
     listar,
-    contarusuarios,
+    ObterContagemUsuariosCadastrados,
     testar
 }

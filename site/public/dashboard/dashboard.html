@@ -78,7 +78,8 @@
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico(1);
+
+    window.onload = obterContagemUsuariosCadastrados();
     // Chamar função de obterUsuariosCadastrados tambem em onload, quando carregar a pagina
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -87,12 +88,12 @@
 
     // altere aqui como os dados serão exibidos
     // e como são recuperados do BackEnd
-    function obterDadosGrafico(idAquario) {
+    function obterContagemUsuariosCadastrados() {
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/usuarios/ObterContagemUsuariosCadastrados/`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -107,7 +108,6 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-                 // Duplicar a função obterDadosGrafico sem o parametro,
                  // Cria o caminho para chegar no banco, rotas, controllers, models
     }
 

@@ -9,10 +9,10 @@ router.get("/", function (req, res) {
 
 router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
-}); // Fazer igual a rounter.get /contarusuarios -> ir para controllers
+}); // Fazer igual a rounter.get /ObterContagemUsuariosCadastrados -> ir para controllers
 
-router.get("/contarusuarios", function (req, res) {
-    usuarioController.contarusuarios(req, res);
+router.get("/ObterContagemUsuariosCadastrados", function (req, res) {
+    usuarioController.ObterContagemUsuariosCadastrados(req, res);
 });
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
