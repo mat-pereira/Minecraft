@@ -213,6 +213,10 @@ button.button1 {
     width: 80%;
 }
 
+button {
+    cursor: pointer;
+}
+
 
 
 
