@@ -95,16 +95,28 @@
 
 <script>
 
-  if (sessionStorage. == '') {
-
+  // recuperando o valor da lingua 
+  if (sessionStorage.LINGUA == 'Portuguese') {
+    lingua_usuario.innerHTML = "Portuguese"
   }
-  else if () {
-
+  else if (sessionStorage.LINGUA == 'English') {
+    lingua_usuario.innerHTML = "English"
   }
   else {
-
+    lingua_usuario.innerHTML = "Spanish"
   }
 
+
+  // recuperando o valor do nível 
+  if (sessionStorage.NIVEL == 'Basic') {
+    nivel_usuario.innerHTML = "Basic"
+  }
+  else if (sessionStorage.NIVEL == 'Advanced') {
+    nivel_usuario.innerHTML = "Advanced"
+  }
+  else {
+    nivel_usuario.innerHTML = "Intermediary" 
+  }
 
 
 </script>
