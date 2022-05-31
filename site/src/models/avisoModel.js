@@ -83,7 +83,7 @@ function ContarPostPorUsuario(idUsuario) {
 }
 
 function publicar(titulo, warp, arquivo, descricao, idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, warp, arquivo, descricao, idUsuario);
     var instrucao = `
         INSERT INTO pm_publicacoes (titulo, warp, arquivo, descricao, fk_usuario) VALUES ('${titulo}', '${warp}', '${arquivo}', '${descricao}', ${idUsuario});
     `;

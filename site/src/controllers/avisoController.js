@@ -108,7 +108,7 @@ function publicar(req, res) {
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, warp, url, descricao, idUsuario)
+        avisoModel.publicar(titulo, warp, arquivo, descricao, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
