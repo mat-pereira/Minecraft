@@ -32,7 +32,7 @@
                 <h6>International Creative Mode Server</h6>
                 <h4>Discover and build a new places, without any boundaries<br> full of fun and millions of friends. <br></h4> <a href="login.html"> <!--Referência-->
                 <button>Start Now!</button>  </a>
-                <h5> <i class="fa-solid fa-square"></i>  1231 Registered Players </h5>
+                <h5> <i class="fa-solid fa-square"></i>  <b id="qtd_cadastros">1231</b> Registered Players </h5>
             </div>
                 <img class="render"; src="imgs/Imagens/20220503_221645000_iOS.png">
         </div>
@@ -107,6 +107,28 @@
 </body>
 </html>
 <script>
+    var cadastros=0
+
+    window.onload = contar_players()
+
+    function contar_players() {
+        fetch("/usuarios/contarusuarioscadastrados").then(function (res1) {
+            if (res1.ok) {
+                console.log(res1)
+                res1.json().then(function (res1) {
+                    console.log("Dados recebidos: ", JSON.stringify(res1))
+                    cadastros = res1[0].QtdCadastros
+                    qtd_cadastros.innerHTML = cadastros
+                    }
+                );
+            } else {
+                throw ('Houve um erro ao pegar info!');
+            }
+        }).catch(function (res1) {
+            console.error(res1);
+        });
+    }
+
     function aparecer_creeper() {
     var qtd_creeper =  Number(input_quantidade.value)
     var img = `<img src="imgs/creeper.webp" style="width: 90px;height: 190px; position: relative;" onclick="matar_creeper">`
@@ -138,4 +160,6 @@
     }
 
 
+
+            
 </script>
