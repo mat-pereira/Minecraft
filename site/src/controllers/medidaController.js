@@ -1,6 +1,6 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarUltimasMedidas(req, res) {
+function buscarContagemNiveis(req, res) {
 
     const limite_linhas = 7;
 
@@ -42,7 +42,7 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 module.exports = {
-    buscarUltimasMedidas,
+    buscarContagemNiveis,
     buscarMedidasEmTempoReal
 
 }
