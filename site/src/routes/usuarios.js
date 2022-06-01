@@ -11,9 +11,7 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 }); // Fazer igual a rounter.get /ObterContagemUsuariosCadastrados -> ir para controllers
 
-router.get("/ObterContagemUsuariosCadastrados", function (req, res) {
-    usuarioController.ObterContagemUsuariosCadastrados(req, res);
-});
+
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
