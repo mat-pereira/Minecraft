@@ -5,6 +5,15 @@ body {
     color: #F9F9F9;
     background-color: #2b2c2e;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+:target{
+    scroll-margin-top:8em ;
+}
+
 .banner {
     background-image: url(../imgs/Banners/Banners.png);
     height: 100vh;
