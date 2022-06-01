@@ -68,19 +68,6 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucao);
 }
 
-function ContarPostPorUsuario(idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
-    var instrucao = `
-        SELECT 
-            count(a.id) 
-        FROM pm_publicacoes a
-            INNER JOIN pm_usuarios u
-                ON a.fk_usuario = u.id
-        WHERE u.id = ${idUsuario};
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
 
 function publicar(titulo, warp, arquivo, descricao, idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, warp, arquivo, descricao, idUsuario);
@@ -112,7 +99,6 @@ function deletar(idAviso) {
 module.exports = {
     listar,
     listarPorUsuario,
-    ContarPostPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
