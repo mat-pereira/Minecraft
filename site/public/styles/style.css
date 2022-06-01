@@ -268,7 +268,6 @@ a {
   height: 100vh;
   width: 100%;
   align-items: center;
-  color: white;
 }
 
 .card {
@@ -278,7 +277,7 @@ a {
   display: flex;
   text-align: center;
   height: 40%;
-  justify-content: right;
+  justify-content: center;
   background-color: #212124;
   font-size: 20px;
   border-radius: 5px;
@@ -286,7 +285,7 @@ a {
 
 .card p {
   margin: 0;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: lighter;
   text-align: left;
 }
@@ -305,13 +304,6 @@ a {
   width: 75%;
 }
 
-.cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50px;
-  margin-top: 6%;
-  /* background-color: #c7c7c7; */
-}
 
 .btns-dash {
   display: flex;
@@ -344,6 +336,7 @@ a {
 .div-results {
   width: 100%;
 }
+
 
 
 
