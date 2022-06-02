@@ -15,6 +15,10 @@ router.get("/contarusuarioscadastrados", function (req, res) {
     usuarioController.contarusuarioscadastrados(req, res);
 }); 
 
+router.get("/contarmapasdousuario", function (req, res) {
+    usuarioController.contarmapasdousuario(req, res);
+}); 
+
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
