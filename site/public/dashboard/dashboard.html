@@ -96,7 +96,7 @@
     function obterDadosGraficoNivel() {
 
 
-        fetch(`/medidas/ultimosNiveis}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/usuarios/recuperardadosnivel}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
