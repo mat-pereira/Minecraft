@@ -84,7 +84,6 @@
 
     function obterDadosGraficoNivel() {
 
-
         fetch(`/usuarios/recuperardadosnivel}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {

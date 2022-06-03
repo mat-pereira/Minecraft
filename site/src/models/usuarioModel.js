@@ -37,10 +37,64 @@ function recuperardadosnivel() {
     return database.executar(instrucao);
 } 
 
+function recuperardadosnivelbasico() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT count(nivel) as 'QtdNivelBa' FROM pm_usuarios WHERE nivel = 'Basic';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+function recuperardadosnivelintermediario() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT count(nivel) as 'QtdNivelIn' FROM pm_usuarios WHERE nivel = 'Intermediary';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+function recuperardadosnivelavancado() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT count(nivel) as 'QtdNivelAd' FROM pm_usuarios WHERE nivel = 'Advanced';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
 function recuperardadoslingua() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT lingua as 'Lingua' FROM pm_usuarios;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+function recuperardadoslinguaportugues() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT count(lingua) as 'QtdLinguaPT' FROM pm_usuarios WHERE lingua = 'Portuguese';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+function recuperardadoslinguaingles() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT count(lingua) as 'QtdLinguaEN' FROM pm_usuarios WHERE lingua = 'English';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+function recuperardadoslinguaespanhol() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT count(lingua) as 'QtdLinguaES' FROM pm_usuarios WHERE lingua = 'Spanish';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -76,5 +130,11 @@ module.exports = {
     contarmapasdousuario,
     contarusuarioscadastrados,
     recuperardadosnivel,
+    recuperardadosnivelbasico,
+    recuperardadosnivelintermediario,
+    recuperardadosnivelavancado,
     recuperardadoslingua,
+    recuperardadoslinguaportugues,
+    recuperardadoslinguaingles,
+    recuperardadoslinguaespanhol,
 };

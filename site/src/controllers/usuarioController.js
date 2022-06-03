@@ -76,8 +76,110 @@ function recuperardadosnivel(req, res) {
         );
 }
 
+function recuperardadosnivelbasico(req, res) {
+    usuarioModel.recuperardadosnivelbasico()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function recuperardadosnivelintermediario(req, res) {
+    usuarioModel.recuperardadosnivelintermediario()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function recuperardadosnivelavancado(req, res) {
+    usuarioModel.recuperardadosnivelavancado()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 function recuperardadoslingua(req, res) {
     usuarioModel.recuperardadoslingua()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function recuperardadoslinguaportugues(req, res) {
+    usuarioModel.recuperardadoslinguaportugues()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function recuperardadoslinguaingles(req, res) {
+    usuarioModel.recuperardadoslinguaingles()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function recuperardadoslinguaespanhol(req, res) {
+    usuarioModel.recuperardadoslinguaespanhol()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -174,10 +276,16 @@ function cadastrar(req, res) {
 module.exports = {
     entrar,
     cadastrar,
-    listar,
+    listar,git
     contarusuarioscadastrados,
     contarmapasdousuario,
     recuperardadosnivel,
+    recuperardadosnivelbasico,
+    recuperardadosnivelintermediario,
+    recuperardadosnivelavancado,
     recuperardadoslingua,
+    recuperardadoslinguaportugues,
+    recuperardadoslinguaingles,
+    recuperardadoslinguaespanhol,
     testar
 }

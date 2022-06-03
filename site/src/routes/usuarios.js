@@ -23,8 +23,32 @@ router.get("/recuperardadosnivel", function (req, res) {
     usuarioController.recuperardadosnivel(req, res);
 }); 
 
+router.get("/recuperardadosnivelbasico", function (req, res) {
+    usuarioController.recuperardadosbasico(req, res);
+}); 
+
+router.get("/recuperardadosnivelintermediario", function (req, res) {
+    usuarioController.recuperardadosnivelintermediario(req, res);
+}); 
+
+router.get("/recuperardadosnivelavancado", function (req, res) {
+    usuarioController.recuperardadosnivelavancado(req, res);
+}); 
+
 router.get("/recuperardadoslingua", function (req, res) {
     usuarioController.recuperardadoslingua(req, res);
+}); 
+
+router.get("/recuperardadoslinguaportugues", function (req, res) {
+    usuarioController.recuperardadoslinguaportugues(req, res);
+}); 
+
+router.get("/recuperardadoslinguaingles", function (req, res) {
+    usuarioController.recuperardadoslinguaingles(req, res);
+}); 
+
+router.get("/recuperardadoslinguaespanhol", function (req, res) {
+    usuarioController.recuperardadoslinguaespanhol(req, res);
 }); 
 
 
