@@ -23,6 +23,10 @@ router.get("/recuperardadosnivel", function (req, res) {
     usuarioController.recuperardadosnivel(req, res);
 }); 
 
+router.get("/recuperardadoslingua", function (req, res) {
+    usuarioController.recuperardadoslingua(req, res);
+}); 
+
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
