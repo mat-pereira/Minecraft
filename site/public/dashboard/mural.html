@@ -87,7 +87,7 @@
                             </label>
                             <br>
                             <label>
-                            <span>Describe your map</span> <span class="pequeno">Máximo 250 characters</span>
+                            <span>Describe your map</span> <span class="pequeno">Max 250 characters</span>
                                 <br>
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
@@ -107,13 +107,13 @@
 
 
 
-
 </body>
 </html>
 <script>
     
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    window.onload = atualizarFeed()
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
@@ -142,7 +142,7 @@
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
-                finalizarAguardar();
+ //               finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -150,7 +150,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+//            finalizarAguardar();
         });
 
         return false;
@@ -212,30 +212,37 @@
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
+                        var spanWarp = document.createElement("span");
+                        var spanArquivo = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
+//                        var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
 
                         spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
+                        spanTitulo.innerHTML = "Title: <b>" + publicacao.titulo + "</b>";
+                        spanWarp.innerHTML = "Warp: <b>" + publicacao.warp + "</b>";
+                        spanNome.innerHTML = "By: <b>" + publicacao.nome + "</b>";
+                        spanArquivo.innerHTML = "File: <b>" + publicacao.arquivo + "</b>";
+                        divDescricao.innerHTML = "Describe: <b>" + publicacao.descricao + "</b>";
+//                        btnEditar.innerHTML = "Editar";
+                        btnDeletar.innerHTML = "Delete";
+
 
                         divPublicacao.className = "publicacao";
                         spanTitulo.id = "inputNumero" + publicacao.idAviso;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
+                        spanWarp.className = "publicacao-warp";
+                        spanArquivo.className = "publicacao-arquivo";
                         divDescricao.className = "publicacao-descricao";
 
                         divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+ //                       btnEditar.className = "publicacao-btn-editar"
+ //                       btnEditar.id = "btnEditar" + publicacao.idAviso;
+ //                       btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idAviso;
@@ -244,21 +251,23 @@
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
+                        divPublicacao.appendChild(spanWarp);
+                        divPublicacao.appendChild(spanArquivo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
+//                        divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
+//                    finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+//            finalizarAguardar();
         });
     }
 
@@ -272,7 +281,7 @@
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
 
-        finalizarAguardar();
+//        finalizarAguardar();
 
         return false;
     }
