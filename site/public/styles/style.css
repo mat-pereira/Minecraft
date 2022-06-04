@@ -326,6 +326,23 @@ padding: 1.5% 1% ;
   padding-top: 45px;
 }
 
+.card_grafico {
+  margin: 2%;
+  width: 40%;
+  padding: 1%;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  height: 40%;
+  align-items: center;
+  background-color: #212124;
+  font-size: 20px;
+  border-radius: 5px;
+  color: #e7e7e7;
+}
+
+/* Tudo sobre os POSTs */
 .publicacao {
   display: flex;
   flex-wrap: wrap;
@@ -345,21 +362,7 @@ padding: 1.5% 1% ;
   width: 100%;
 }
 
-.card_grafico {
-  margin: 2%;
-  width: 40%;
-  padding: 1%;
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  text-align: center;
-  height: 40%;
-  align-items: center;
-  background-color: #212124;
-  font-size: 20px;
-  border-radius: 5px;
-  color: #e7e7e7;
-}
+
 
 
 

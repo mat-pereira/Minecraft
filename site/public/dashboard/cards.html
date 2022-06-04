@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlanetMinecraft | My Profile</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="dashboards.css">
+    <!-- <link rel="stylesheet" href="dashboards.css"> -->
     <script src="../js/funcoes.js"></script>
     <!--Icone no title HTML--> <link rel="icon" href="imgs/Imagens/20220503_225050620_iOS.jpg"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -92,7 +92,7 @@
 </body>
 
 <script>
-
+    var idUsuario = sessionStorage.ID_USUARIO
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
   // recuperando o valor da lingua 
@@ -121,11 +121,11 @@
  // recuperando e exibindo o valor de postagens feitas pelo usuario 
  var mapas=0
 
-window.onload = contar_mapas()
+window.onload = contar_mapas(1)
 
 
 function contar_mapas(idUsuario) {
-    fetch("/usuarios/contarmapasdousuario").then(function (res1) {
+    fetch("/avisos/ContarPorUsuario/${idUsuario}").then(function (res1) {
         if (res1.ok) {
             console.log(res1)
             res1.json().then(function (res1) {
