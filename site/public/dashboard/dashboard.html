@@ -10,10 +10,13 @@
     <!-- <link rel="stylesheet" href="dashboards.css"> -->
     <script src="../js/funcoes.js"></script>
     <!--Icone no title HTML--> <link rel="icon" href="imgs/Imagens/20220503_225050620_iOS.jpg"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+       <!--Google Fonts--> <link rel="preconnect" href="https://fonts.googleapis.com"> 
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Radio+Canada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
     <!--Link Font Awesome--> <script src="https://kit.fontawesome.com/b18c1d249d.js" crossorigin="anonymous"></script> 
 
         <!-- scripts do Chart.js -->
@@ -72,18 +75,41 @@
             <canvas id="canvas_grafico1"></canvas>
         </div>
     </div>
+    <div class="qtd_players_div">
+        <div class="metricas">
+            <div id="card_metrica" class="red"><span>50 players</span> <b>Alert</b></div>
+            <div id="card_metrica" class="yellow">40 players <b>Attention</b></div>
+            <div id="card_metrica" class="normal"><b id="qtd_players">40</b> players registed</div>
+        </div>
+        </div>
+    <div class="div_resultado">
+        <div class="card_grafico">Level</div>
+        <div class="card_grafico">Language</div> 
+    </div>
 
+    <div class="div_resultado">
+        <div class="card_grafico" id="resultado1">Level</div>
+        <div class="card_grafico" id="resultado2">Language</div> 
+    </div>
+
+    </div>
+</div>
 
 </body>
 
 </html>
 
 <script>
+
+    
+
+
 var basico = 0
 var intermediario = 0
 var avancado = 0
     window.onload = obterDadosGraficoNivel();
     window.onload = obterDadosGraficoLingua();
+
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     // verificar_autenticacao();
@@ -147,6 +173,8 @@ var avancado = 0
         dados.datasets[0].data.push(basico); 
         dados.datasets[0].data.push(intermediario); 
         dados.datasets[0].data.push(avancado); 
+
+        colocar_texto_cards();
 
 
         console.log("meu teste"+basico)
@@ -258,6 +286,9 @@ function obterDadosGraficoLingua() {
         dados.datasets[0].data.push(ingles); 
         dados.datasets[0].data.push(espanhol); 
         dados.datasets[0].data.push(portugues); 
+      
+      
+        colocar_texto_cards();
 
 
         console.log("meu teste"+ingles)
@@ -453,4 +484,43 @@ function obterDadosGraficoLingua() {
     //         });
 
     // }
+
+    var cadastros=0
+
+window.onload = contar_players()
+
+function contar_players() {
+    fetch("/usuarios/contarusuarioscadastrados").then(function (res1) {
+        if (res1.ok) {
+            console.log(res1)
+            res1.json().then(function (res1) {
+                console.log("Dados recebidos: ", JSON.stringify(res1))
+                cadastros = res1[0].QtdCadastros
+                qtd_players.innerHTML = cadastros
+                }
+            );
+        } else {
+            throw ('Houve um erro ao pegar info!');
+        }
+    }).catch(function (res1) {
+        console.error(res1);
+    });
+}
+
+ var total_pessoas = 0
+    function colocar_texto_cards() {
+         total_pessoas = basico + intermediario + avancado
+        
+        resultado1.innerHTML = `
+        Basic: ${(basico/total_pessoas).toFixed(2) * 100}% <br>
+        Intermediary: ${(intermediario/total_pessoas).toFixed(2) * 100}% <br>
+        Advanced: ${(avancado/total_pessoas).toFixed(2) * 100}%`
+
+        resultado2.innerHTML = `
+        English: ${(ingles/total_pessoas).toFixed(2) * 100}% <br>
+        Spanish: ${(espanhol/total_pessoas).toFixed(2) * 100}% <br>
+        Portuguese: ${(portugues/total_pessoas).toFixed(2) * 100}%`
+    }
+
+
 </script>

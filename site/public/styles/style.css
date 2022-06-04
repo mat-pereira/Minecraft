@@ -167,6 +167,7 @@ a {
   background-color: rgb(233, 233, 233);
   margin-top: 5px;
   margin-bottom : 5px;
+  font-family: monospace;
 }
 
 .dash-mural .avisos .div-form textarea {
@@ -175,6 +176,7 @@ a {
   padding: 5px;
   border-radius: 5px;
   margin-top: 5px;
+  font-family: monospace;
 }
 
 .dash-mural .avisos .div-form button {
@@ -289,6 +291,7 @@ padding: 1.5% 1% ;
   background-color: #212124;
   font-size: 20px;
   border-radius: 5px;
+  box-shadow: 0rem 0rem 2rem #048816;
 }
 
 .card p {
@@ -362,6 +365,53 @@ padding: 1.5% 1% ;
   width: 100%;
 }
 
+.metricas {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -93vh;
+}
+
+#card_metrica {
+  margin: 2%;
+  padding: 1%;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+}
+
+.red {
+background-color: #d0021b;
+box-shadow: #d0021b 0 0 0.5rem ;
+}
+
+.yellow {
+background-color: #f58f23;
+box-shadow: #f58f23 0 0 0.5rem ;
+}
+
+.normal {
+  background-color: #1b1b23;
+}
+
+#qtd_players {
+  font-size: 16px;
+}
+
+.div_resultado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -51vh;
+}
 
 
 
