@@ -116,9 +116,22 @@ function cadastrar(nome, email, senha, nivel, lingua) {
     return database.executar(instrucao);
 }
 
+function cadastrar_sessao(email) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar_sessao():", email);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO pm_acessos (fk_usuario) VALUES ((select id from pm_usuarios where email = '${email}'));
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
+    cadastrar_sessao,
     listar,
     contarusuarioscadastrados,
     recuperardadosnivel,

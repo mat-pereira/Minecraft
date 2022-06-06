@@ -88,6 +88,8 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.NIVEL = json.nivel;
                 sessionStorage.LINGUA = json.lingua;
+                cadastrar_sessao()
+
 
                 setTimeout(function () {
                     window.location = "./dashboard/cards.html";
@@ -116,4 +118,43 @@ function sumirMensagem() {
     cardErro.style.display = "none"
 }
 
+function cadastrar_sessao() {
+
+    var emailVar = email_input.value;
+
+    fetch("/usuarios/cadastrar_sessao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                emailServer: emailVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                alert("Cadastro da sessão realizado com sucesso!");
+
+                // setTimeout(() => {
+                //     window.location = "login.html";
+                // }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro da sessão!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
 </script>
