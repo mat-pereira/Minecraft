@@ -296,17 +296,21 @@ padding: 1.5% 1% ;
 
 .card p {
   margin: 0;
-  font-size: 30px;
+  font-size: 46px;
   font-weight: lighter;
-  text-align: left;
+  top: -22%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
-.cards h1 {
+.card h1 {
   font-size: 20px;
+  margin-top: 10%;
+  padding: 0;
   width: 100%;
-  text-align: left;
   font-weight: lighter;
-  margin-left: 20px;
+
 }
 
 .resultado {
