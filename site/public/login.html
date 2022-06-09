@@ -49,7 +49,7 @@ function entrar() {
 
     if (emailVar == "" || senhaVar == "") {
         cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "Preencha todos os campos";
+        mensagem_erro.innerHTML = "Fill in all fields";
         mensagem_erro.style.padding = "1%"
         email_input.style.border="red 1px solid"
         senha_input.style.border="red 1px solid"
@@ -99,7 +99,7 @@ function entrar() {
 
         } else {
 
-            console.log("Houve um erro ao tentar realizar o login!");
+            console.log("An error occurred while login!");
 
             resposta.text().then(texto => {
                 console.error(texto);
@@ -139,7 +139,7 @@ function cadastrar_sessao() {
             if (resposta.ok) {
                 cardErro.style.display = "block";
 
-                alert("Cadastro da sessão realizado com sucesso!");
+                alert("Welcome! Your session registration has been sucessfully!");
 
                 // setTimeout(() => {
                 //     window.location = "login.html";
@@ -148,7 +148,7 @@ function cadastrar_sessao() {
                 limparFormulario();
                 finalizarAguardar();
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro da sessão!");
+                throw ("An error occurred while registering session!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
