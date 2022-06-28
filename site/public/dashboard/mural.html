@@ -6,114 +6,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlanetMinecraft | Maps Area</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
+    <link rel="stylesheet" href="../styles/mural.css">
     <script src="../js/funcoes.js"></script>
-    <!--Icone no title HTML--> <link rel="icon" href="imgs/Imagens/20220503_225050620_iOS.jpg"> 
+    <!--Icone no title HTML-->
+    <link rel="icon" href="imgs/Imagens/20220503_225050620_iOS.jpg">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"> -->
-           <!--Google Fonts--> <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Radio+Canada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--Link Font Awesome--> <script src="https://kit.fontawesome.com/b18c1d249d.js" crossorigin="anonymous"></script> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Radio+Canada:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!--Link Font Awesome-->
+    <script src="https://kit.fontawesome.com/b18c1d249d.js" crossorigin="anonymous"></script>
 </head>
 
-    <!--<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
- <body onload="validarSessao()"> -->
+<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+ <body onload="validarSessao()">
 
-    <div class="janela">
+<!-- <div class="janela"> -->
 
+<div class="sidebar">
+    <div class="title">
+        <span>Planet Minecraft</span>
+        <div class="line"></div>
+    </div>
 
-        <div class="sidebar">
-            <div class="title">
-            <span>Planet Minecraft</span>
-            <div class="line"></div></div>
+    <div class="hello">
+        <h5>Welcome, <span id="b_usuario">usuário</span>!</h5>
+    </div>
 
-            <div class="hello">
-                <h5>Welcome, <span id="b_usuario">usuário</span>!</h5>
-            </div>
+    <div class="btn-nav">
+        <a href="./cards.html">
+            <h5>
+                <i class="fa-solid fa-user"></i>
+                My Profile
+            </h5>
+        </a>
+    </div>
 
-            <div class="btn-nav">   
-                <a href="./cards.html">      
-                <h5>
-                    <i class="fa-solid fa-user"></i> 
-                    My Profile</h5>
-                </a>
-            </div>
+    <div class="btn-nav">
+        <a href="./dashboard.html">
+            <h5>
+                <i class="fa-solid fa-user-gear"></i>
+                Admin Area
+            </h5>
+        </a>
+    </div>
 
-            <div class="btn-nav">
-                <a href="./dashboard.html">
-                    <h5>
-                        <i class="fa-solid fa-user-gear"></i> 
-                        Admin Area</h5>
-                </a>
-            </div>
+    <div class="btn-nav-ativo">
+        <a href="./mural.html">
+            <h5>
+                <i class="fa-solid fa-map"></i>
+                Maps Area
+            </h5>
+        </a>
+    </div>
 
-            <div class="btn-nav-ativo">
-                <a href="./mural.html">
-                    <h5>
-                        <i class="fa-solid fa-map"></i>
-                        Maps Area</h5>
-                </a>
-            </div>
+    <div class="btn-logout" onclick="limparSessao()">
+        <h6>Exit</h6>
+    </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h6>Exit</h6>
-            </div>
+</div>
 
-        </div>
+<div class="dash-mural">
 
-        <div class="dash-mural">
-
-            <div class="avisos">
-                <div class="container">
-                    <h1>Public Map</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                            <span>Title</span>
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                            <span>/warp</span>
-                                <br>
-                                <input name="warp" id="warp" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                            <span>File</span> <span class="pequeno">type the url</span>
-                                <br>
-                                <input name="arquivo" id="arquivo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                            <span>Describe your map</span> <span class="pequeno">Max 250 characters</span>
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Maps Gallery</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <button class="public" onclick="abrir('div_form')">
+        <i class="fa-solid fa-square-plus"></i>
+        Public your map
+    </button>
+<!--Div do formulario para postar o mapa-->
+    <div class='div_form' id='div_form'>
+        <form id="form_postagem" method="post" onsubmit="return publicar()">
+            <label>
+                <span>Title</span>
+                <br>
+                <input name="titulo" id="titulo" maxlength="100" type="text" placeholder="Title">
+            </label>
+            <br>
+            <label>
+                <span>/warp</span>
+                <br>
+                <input name="warp" id="warp" maxlength="100" type="text" placeholder="Location">
+            </label>
+            <br>
+            <label>
+                <span>File</span>
+                <br>
+                <input name="arquivo" id="arquivo" maxlength="100" type="text" placeholder="Weblink Picture">
+            </label>
+            <br>
+            <label>
+                <span>Describe your map</span>
+                <br>
+                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" placeholder="Max 250 caractheres"></textarea>
+            </label>
+            <br>
+            <button class="enviar">Enviar</button>
+        </form>
+    </div>
+    <h1>Maps Gallery</h1>
+    <div class="div-results">
+        <div id="feed_container" class="feed-container">
         </div>
     </div>
+</div>
+</div>
+
 
 
 
 </body>
+
 </html>
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     window.onload = atualizarFeed()
@@ -142,10 +153,10 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Post registered successfully by user ID: " + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
- //               finalizarAguardar();
+                //               finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -153,7 +164,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-//            finalizarAguardar();
+            //            finalizarAguardar();
         });
 
         return false;
@@ -212,24 +223,24 @@
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
+                        // var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
                         var spanWarp = document.createElement("span");
                         var spanArquivo = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
-//                        var btnEditar = document.createElement("button");
+                        //                        var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        // spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Title: <b>" + publicacao.titulo + "</b>";
                         spanWarp.innerHTML = "Warp: <b>" + publicacao.warp + "</b>";
                         spanNome.innerHTML = "By: <b>" + publicacao.nome + "</b>";
                         spanArquivo.innerHTML = "File: <b>" + publicacao.arquivo + "</b>";
                         divDescricao.innerHTML = "Describe: <b>" + publicacao.descricao + "</b>";
-//                        btnEditar.innerHTML = "Editar";
+                        //                        btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Delete";
 
 
@@ -243,34 +254,34 @@
 
                         divButtons.className = "div-buttons"
 
- //                       btnEditar.className = "publicacao-btn-editar"
- //                       btnEditar.id = "btnEditar" + publicacao.idAviso;
- //                       btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        //                       btnEditar.className = "publicacao-btn-editar"
+                        //                       btnEditar.id = "btnEditar" + publicacao.idAviso;
+                        //                       btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idAviso;
                         btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
+                        //    divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(spanWarp);
+                        divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanArquivo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-//                        divButtons.appendChild(btnEditar);
+                        //                        divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
 
-//                    finalizarAguardar();
+                    //                    finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-//            finalizarAguardar();
+            //            finalizarAguardar();
         });
     }
 
@@ -284,9 +295,20 @@
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
 
-//        finalizarAguardar();
+        //        finalizarAguardar();
 
         return false;
     }
 
 </script>
+
+<script> // Pop UP 
+    function abrir(id) {
+        document.getElementById(id).style.display = "block";
+    }
+
+    function fechar(id) {
+        document.getElementById(id).style.display = "none";
+    } 
+</script>
+

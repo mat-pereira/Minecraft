@@ -1,0 +1,284 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+  background-color: #161618;
+  color: #F9F9F9
+}
+
+/* DASHBOARD */
+
+.janela {
+  display: flex;
+  width: 100vw;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0 25px 25px 0;
+  background-color: #1b1b23;
+  box-shadow: 0 0 0.5rem black;
+}
+
+.sidebar span {
+  font-weight: bold;
+}
+
+.dash-mural {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background-color: #20232c;
+  position: relative;
+  top: 0;
+
+}
+
+.header-left h1 {
+  color: #32b9cd;
+}
+
+.hello {
+  width: 100%;
+  color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+.hello #b_usuario {
+  font-weight: bold;
+}
+
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.sidebar h5{
+  margin: 7%;
+  padding: 1%;
+  color: #e7e7e7;
+}
+
+.btn-nav-ativo {
+  width: 76%;
+  background: linear-gradient(255deg, #1DED35, #048816);
+  border-radius: 5px;
+  text-align: start;
+  padding: 1% 1%;
+}
+
+.btn-nav {
+  width: 76%;
+  border-radius: 5px;
+  text-align: start;
+  padding: 1% 1%;
+}
+
+.sidebar h6{
+  margin: 7%;
+  padding: 1%;
+  color: #e7e7e7;
+}
+
+.btn-logout {
+width: 26%;
+background: #048816;
+border-radius: 5px;
+text-align: center;
+padding: 1% 1%;
+padding: 1% 1%;
+}
+
+.line {
+  background: linear-gradient(135deg, #1DED35, #048816);
+  height: 2px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Maps Area */
+
+.dash-mural {
+  padding: 3vw 5vw;
+  width: 70vw;
+  background-color: #161618;
+  display: flex;
+  flex-direction: column;
+  left: 20vw;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+  align-items: center;
+}
+
+.dash-mural button.public {
+  background-color: #d0021b;
+  box-shadow: #d0021b 0rem 0rem 0.5rem;
+  border-radius: 2px;
+  padding: 1%;
+  font-size: 80%;
+  color: #F9F9F9;
+  border: 0;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dash-mural .div_form {
+  display: none;
+  background-image: url(../imgs/Banners/Banner_Rules.png);
+  box-shadow: rgba(0, 0, 0, 0.603) 0 0 1rem; ;
+  align-items: center;
+  position: fixed;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 1% 1.5%;
+  font-size: 14px;
+  width: 22vw;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+
+}
+
+
+.dash-mural  label {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+}
+
+
+.dash-mural  span.pequeno{
+  margin: 0;
+  padding: 0;
+  font-size: 8px;
+}
+.dash-mural  span {
+  margin-top: 4%;
+  font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+}
+
+.dash-mural  input {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(233, 233, 233);
+  margin-top: 5px;
+  margin-bottom : 5px;
+  font-family: monospace;
+  width: 94%;
+}
+
+.dash-mural  textarea {
+  width: 94%;
+  background-color: rgb(233, 233, 233);
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-family: monospace;
+}
+
+.dash-mural  button.enviar {
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 1% 1%;
+  color: white;
+  margin-top: 1%;
+  background: linear-gradient(255deg, #1DED35, #048816);
+  width: 98%;
+}
+
+
+ /* div resultado posts */
+
+ .div-results {
+  width: 100%;
+  
+}
+
+.div-results .feed-container {
+  background-color: #212124;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1%;
+  border-radius: 3px;
+}
+
+.publicacao {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:initial;
+  /* border-bottom: 1px solid linear-gradient(255deg, #1DED35, #048816); */
+  padding: 1vh 1vw;
+  width: 19.2vw;
+  height: 20vw;
+  margin: 1% 1%;
+  padding: 1.5%;
+  background-color: #e7e7e7;
+  color: #1b1b23;
+  border-radius: 10px;
+  font-size: 80%;
+  box-shadow: 0rem 0rem 0.2rem #e7e7e7;
+}
+
+.publicacao > *:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+
+
+.div-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.div-buttons button {
+background: #048816;
+border-radius: 3px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 10px;
+padding: 1.5% 1% ;
+}
+
+.publicacao-btn-editar {
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 1% 1%;
+  color: white;
+  background: linear-gradient(255deg, #1DED35, #048816);
+  width: 80px;
+}
+
