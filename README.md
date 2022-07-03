@@ -1,5 +1,5 @@
-<b> Planet Minecraft by Mateus Pereira. </b>
-
+<center> <b> Planet Minecraft by Mateus Pereira. </b>
+</center>
 Esse é meu Projeto Individual de Pesquisa e Inovação do 1° Semestre do curso de 
 Analise e Desenvolvimento de Sistemas.
 <br> <br>
