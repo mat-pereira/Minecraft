@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
-  background-color: #161618;
+  background-color: #1b1b23;
   color: #F9F9F9
 }
 
@@ -30,7 +30,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   border-radius: 0 25px 25px 0;
-  background-color: #1b1b23;
+  background-color: #1f1f26;
   box-shadow: 0 0 0.5rem black;
 }
 
@@ -251,7 +251,7 @@ padding: 1.5% 1% ;
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #27292f;
 }
 
 .dash {
@@ -259,25 +259,157 @@ padding: 1.5% 1% ;
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
-
-  /* width: 75%;
+  background-color: #27292f;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 75%; */
     display: flex;
-    background-color: #161618;
-    flex-direction: column;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: space-around;*/
-  height: 100vh;
+    justify-content: space-around; */ 
+  height: 100vh; 
 }
-
 
 
 .cards {
   display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
+  /* margin-top: 6vh; */
+  margin-left: 10vw;
+  margin-right: 10vw;
+  justify-content: space-between; 
+  height: 90%;
+  width: 80%; 
   align-items: center;
+  flex-wrap: wrap;
+}
+
+
+
+
+.dash .cards .card_time {
+  padding: 2%;
+  background-color: #1f1f26;
+  border-radius: 7px;
+  width: 39vw;
+  height: auto;
+  display: flex;
+  box-shadow: #27292f 0 0 0.5rem ;
+  margin: 1%;
+  align-items: center;
+}
+
+.container_roscas {
+  margin-right: 1%;
+  display: flex;
+  height: auto;
+  width: 37.7vw;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+
+
+.dash .cards .card_time .infos_time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.infos_time h6.title {
+  margin: 1vh 0 3vh 0;
+}
+
+#qtd_acessos_this_week, #qtd_acessos_last_week {
+  margin: 1.5vh 0;
+}
+
+.container_canvas {
+  padding-left: 5%;
+  margin-bottom: -2%;
+  /* width: 340px; */
+  height: 30vh;
+  display: flex;
+}
+
+.container_canvas canvas{
+  padding: 0;
+}
+
+
+.dash .cards .container_roscas canvas {
+    height: 20vh;
+    width: auto;
+}
+
+
+
+h6 {
+  color: #959595;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+.card_padrao {
+  background-color: #1f1f26;
+  padding: 2%;
+  box-shadow: #27292f 0 0 0.5rem ;
+  border-radius: 7px;
+  margin: 1%;
+  width: auto;
+  /* float: left; */
+}
+
+.div_players {
+  margin: 1%;
+}
+
+.div_players {
+  /* display: flex; */
+  /* margin-top: 6vh; */
+  /* height: 90vh;
+  width: 40vw;  */
+  /* margin-left: 10vw; */
+  /* margin-right: 10vw; */
+  /* margin: 1%; */
+  height: 100%;
+}
+
+#card_scrool {
+  margin-top: 2%;
+  overflow: auto;
+  height: 93.5%;
+  width: 18vw;
+  padding: 5%;
+  /* margin: 1%; */
+  /* float: left; */
+}
+
+.info_player {
+  padding: 5%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+}
+.info_player #texto_player {
+  display: flex;
+  flex-direction: column;
+}
+
+.info_player h5, .info_player h6{
+  margin: 0 10px;
+  padding: 1% 0;
+}
+
+.div_players .title {
+  margin-bottom: 1vh;
+}
+
+.info_player img {
+  /* width: 3vw; */
+  height: 7vh;
 }
 
 .card {
@@ -292,6 +424,7 @@ padding: 1.5% 1% ;
   font-size: 20px;
   border-radius: 5px;
   box-shadow: 0rem 0rem 2rem #048816;
+  /* float: right; */
 }
 
 .card p {
@@ -313,11 +446,11 @@ padding: 1.5% 1% ;
 
 }
 
-.resultado {
+/* .resultado {
   margin: 5px;
   margin-left: 20px;
   width: 75%;
-}
+} */
 
 
 .btns-dash {
@@ -327,11 +460,11 @@ padding: 1.5% 1% ;
   margin-top: 30px;
 }
 
-.graph {
+/* .graph {
   width: 80%;
   margin: auto;
   padding-top: 45px;
-}
+} */
 
 .card_grafico {
   margin: 2%;
@@ -349,32 +482,12 @@ padding: 1.5% 1% ;
   color: #e7e7e7;
 }
 
-/* Tudo sobre os POSTs */
-.publicacao {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  border-bottom: 3px solid ;
-  padding: 20px;
-}
 
-.publicacao > *:not(:last-child) {
-  padding: 0 0 10px 0;
-}
 
-.div-results {
-  width: 100%;
-}
 
-.metricas {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -93vh;
-}
+
+
+
 
 #card_metrica {
   margin: 2%;
@@ -389,6 +502,7 @@ padding: 1.5% 1% ;
   color: #e7e7e7;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .red {
@@ -417,6 +531,9 @@ box-shadow: #f58f23 0 0 0.5rem ;
   top: -51vh;
 }
 
+#canvas_grafico_acess {
+  height: 24vh;
+}
 
 
 

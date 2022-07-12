@@ -11,6 +11,26 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 }); 
 
+router.get("/listarnomedata", function (req, res) {
+    usuarioController.listarnomedata(req, res);
+}); 
+
+router.get("/contarregistrospormes", function (req, res) {
+    usuarioController.contarregistrospormes(req, res);
+}); 
+
+router.get("/contaracessosthisweek", function (req, res) {
+    usuarioController.contaracessosthisweek(req, res);
+}); 
+
+router.get("/contaracessoslastweek", function (req, res) {
+    usuarioController.contaracessoslastweek(req, res);
+}); 
+
+router.get("/quantidadeacessosdiamesano", function (req, res) {
+    usuarioController.quantidadeacessosdiamesano(req, res);
+}); 
+
 router.get("/contarusuarioscadastrados", function (req, res) {
     usuarioController.contarusuarioscadastrados(req, res);
 }); 

@@ -9,6 +9,62 @@ function listar() {
     return database.executar(instrucao);
 } 
 
+function listarnomedata() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    select nome, convert(varchar, datetime_cadastro, 113) as "datetime_cadastro" from [dbo].[pm_usuarios] order by datetime_cadastro desc;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+function contarregistrospormes() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    select Count(id) as 'Qtd', MONTH(datetime_cadastro) as 'Mes' from [dbo].[pm_usuarios] group by month(datetime_cadastro) order by mes asc;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}  
+
+function contaracessosthisweek() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT  count(id) as 'Qtd'
+    FROM [dbo].[pm_acessos]
+    WHERE date_time >= DATEADD(day,-7,GETDATE());
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}  
+
+function contaracessoslastweek() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT  count(id) as 'Qtd'
+    FROM [dbo].[pm_acessos]
+    WHERE date_time >= DATEADD(day,-14,GETDATE()) AND date_time < DATEADD(day,-7,GETDATE());
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}  
+
+function quantidadeacessosdiamesano() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT  DATEPART(year,date_time) as 'Ano',
+            DATEPART(month,date_time) as 'Mes',
+            DATEPART(day,date_time) as 'Dia',
+            count(id) as 'Qtd'
+    FROM [dbo].[pm_acessos]
+    GROUP BY day(date_time), month(date_time), year(date_time) ORDER BY Mes asc
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} 
+
+
+
 
 function contarusuarioscadastrados() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
@@ -142,4 +198,10 @@ module.exports = {
     recuperardadoslinguaportugues,
     recuperardadoslinguaingles,
     recuperardadoslinguaespanhol,
+    listarnomedata,
+    contarregistrospormes,
+    contaracessosthisweek,
+    contaracessoslastweek,
+    quantidadeacessosdiamesano,
+    
 };

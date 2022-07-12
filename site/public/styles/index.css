@@ -56,6 +56,12 @@ html{
 .banner nav.nav_bar li {
     padding: 2px 0;
 }
+
+.banner nav.nav_bar li:hover {
+    transform: translateY(2px);
+    border-bottom: #048816 1px solid;
+}
+
 .banner nav.nav_bar .selecionado {
     border-bottom: 2px solid #1DED35;
     background-color: transparent;
@@ -111,6 +117,18 @@ button {
     color: #F9F9F9;
     background: linear-gradient(135deg, #1DED35, #048816);
     font-family: 'Gilroy', 'Fire Sans', 'Quetrial','Radio Canada', 'Poppins';
+    transition: all ease;
+}
+
+
+button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 0 1rem #1DED35;
+}
+
+i:hover {
+    transform: translateY(2px);
+    color: #066913;
 }
 
 .banner .card_banner button {
@@ -161,7 +179,7 @@ div.server {
     width: auto;
     height: 54vh;
     position: absolute;
-    top: 190vh;
+    top: 200vh;
     left: 52vw;
     transform: scaleX(-1);
 }

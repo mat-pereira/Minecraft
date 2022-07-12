@@ -24,6 +24,91 @@ function listar(req, res) {
         );
 }
 
+function listarnomedata(req, res) {
+    usuarioModel.listarnomedata()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function contarregistrospormes(req, res) {
+    usuarioModel.contarregistrospormes()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function contaracessoslastweek(req, res) {
+    usuarioModel.contaracessoslastweek()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function contaracessosthisweek(req, res) {
+    usuarioModel.contaracessosthisweek()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function quantidadeacessosdiamesano(req, res) {
+    usuarioModel.quantidadeacessosdiamesano()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 function contarusuarioscadastrados(req, res) {
     usuarioModel.contarusuarioscadastrados()
         .then(function (resultado) {
@@ -301,5 +386,10 @@ module.exports = {
     recuperardadoslinguaportugues,
     recuperardadoslinguaingles,
     recuperardadoslinguaespanhol,
-    testar
+    contarregistrospormes,
+    listarnomedata,
+    testar,
+    contaracessosthisweek,
+    contaracessoslastweek,
+    quantidadeacessosdiamesano,
 }
