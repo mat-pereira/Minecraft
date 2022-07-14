@@ -13,3 +13,8 @@ CSS - Estilização do site <br>
 NodeJS - Comunicação com banco de dados <br>
 MySQL/SQLServer - Sistema de gerenciamento dos dados <br>
 Azure - Alocação da aplicação na web
+
+Saiba mais em: 
+https://bandteccom-my.sharepoint.com/:w:/r/personal/mateus_silva_sptech_school/Documents/Pesquisa%20e%20Inova%C3%A7%C3%A3o/Planet%20Minecraft/Planet%20Minecraft.docx?d=w690e6a3f52cf41daa0ebbda488ae5d40&csf=1&web=1&e=SBU5Nw
+
+ 
